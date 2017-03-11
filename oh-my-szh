@@ -1,0 +1,19 @@
+alias bert="bundle exec ruby -Itest"
+alias be="bundle exec"
+alias rpool="env VVERBOSE=1 RAILS_ENV=development bundle exec resque-pool"
+alias jobscores="bundle exec rails s"
+alias jobscorec="bundle exec rails c"
+alias resetdb="
+dropdb jobscore_development
+dropdb jobscore_test
+createdb jobscore_development
+createdb jobscore_test
+cd /Users/fernando/Code/demodatabase
+pg_restore --no-owner --no-privileges --format=c --dbname=jobscore_development itn_demo.db.dump
+cd /Users/fernando/Code/jobscore
+bundle exec rake db:migrate
+bundle exec rake db:test:prepare
+bundle exec rake jobscore:reset_passwords
+"
+
+AUTOSUGGESTION_HIGHLIGHT_COLOR='fg=250'
