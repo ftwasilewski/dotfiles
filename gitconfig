@@ -1,22 +1,14 @@
+[user]
+	name = Fernando Terra Wasilewski
+	email = ftwasilewski@gmail.com
+	signingkey = BF0EFBBDFA218D1D
 [pull]
 	rebase = true
 [push]
 	default = simple
-[core]
-	excludesfile = /Users/fernando/.gitignore_global
-	editor = nano
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[user]
-	name = Fernando Terra Wasilewski
-	email = ftwasilewski@gmail.com
-[github]
-	user = ftwasilewski
 [commit]
 	gpgsign = true
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg2
+	program = /usr/local/bin/gpg
+[alias]
+  cleanup = "!git fetch --all --prune; git branch --merged origin/master | grep -v \"\\*\" | grep -v \"\\  master\" | xargs -n 1 git branch -d"
